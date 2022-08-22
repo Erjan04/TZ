@@ -1,0 +1,52 @@
+requiredParams:
+  name: Fragment + ViewModel
+  description: Create Fragment and ViewModel
+
+widgets:
+  - stringParameter:
+      id: fragmentNew
+      name: Fragment New
+      help: Create New Fragment
+      constraints:
+        - nonempty
+        - unique
+        - class
+      default: Blank
+
+globals:
+  - stringParameter:
+      id: fragmentName
+      value: ${fragmentNew}Fragment
+
+  - stringParameter:
+      id: fragmentLayoutResName
+      value: ${fragmentName.fragmentToLayout()}
+
+  - stringParameter:
+      id: viewModelName
+      value: ${fragmentNew}ViewModel
+
+  - stringParameter:
+      id: fragmentBinding
+      value: Fragment${fragmentNew}Binding
+
+  - stringParameter:
+      id: viewModelFactoryName
+      value: ${fragmentNew}ViewModelFactory
+
+recipe:
+  - instantiateAndOpen:
+      from: root/src/Fragment.kt.ftl
+      to: ${srcOut}/${fragmentName}.kt
+
+  - instantiateAndOpen:
+      from: root/src/ViewModel.kt.ftl
+      to: ${srcOut}/${viewModelName}.kt
+
+  - instantiateAndOpen:
+      from: root/res/layout/fragment.xml.ftl
+      to: ${resOut}/layout/${fragmentLayoutResName}.xml
+
+  - instantiateAndOpen:
+      from: root/src/ViewModelFactory.kt.ftl
+      to: ${srcOut}/${viewModelFactoryName}.kt

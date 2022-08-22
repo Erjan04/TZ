@@ -1,0 +1,15 @@
+{
+  "user": {
+    "first_name": "Кадзуя",
+    "photo": "https://cdn.vox-cdn.com/thumbor/qZ8tatInnQx6z-kJB1V3dmOQBs0=/0x0:1920x1080/1200x800/filters:focal(909x287:1215x593)/cdn.vox-cdn.com/uploads/chorus_image/image/71220416/tekken_8.0.jpg",
+    "second_name": "Мишима",
+    "education": "Даватель люлей",
+    "experience": "С рождения дает люлей",
+    "company": [
+      {
+        "name": "Мишима корпарейшн",
+        "position": "Директор до Хейкати"
+      }
+    ]
+  }
+}
