@@ -16,7 +16,7 @@ class GetImagesUseCaseTest {
     @Test
     fun `get image use case test`() = runBlocking {
         val testList =
-            mutableListOf(GalleryModel("http//photo//ты знаешь казуя мишима?Он сейчас тебя ебан#т ты ж охуе##ь"))
+            mutableListOf("http//photo//ты знаешь казуя мишима?Он сейчас тебя ебан#т ты ж охуе##ь")
         val flow = flow {
             emit(testList)
         }
@@ -25,7 +25,7 @@ class GetImagesUseCaseTest {
         val useCase = GetImagesUseCase(galleryRepository)
         val actual = useCase.invoke().first()
         val expected =
-            mutableListOf(GalleryModel("http//photo//ты знаешь казуя мишима?Он сейчас тебя ебан#т ты ж охуе##ь"))
+            mutableListOf("http//photo//ты знаешь казуя мишима?Он сейчас тебя ебан#т ты ж охуе##ь")
         assertEquals(expected, actual)
 
     }
